@@ -2,11 +2,14 @@ import React, { useCallback, useState } from "react";
 
 function UserSearch(props) {
   const [username, setUsername] = useState("");
-  const onSubmit = useCallback(event => {
-    event.preventDefault();
+  const onSubmit = useCallback(
+    event => {
+      event.preventDefault();
 
-    props.onSubmit({ fields: { username } });
-  });
+      props.onSubmit({ fields: { username } });
+    },
+    [props, username]
+  );
 
   return (
     <form onSubmit={onSubmit}>

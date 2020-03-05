@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./loader.module.scss";
 
 /**
  * Display a "loader" if props.isVisible is set to true;
@@ -12,9 +13,11 @@ function Loader(props) {
 
   return (
     isVisible && (
-      <div class="spinner-box">
-        <div class="circle-border">
-          <div class="circle-core"></div>
+      <div className={styles.container}>
+        <div className={styles.spinnerBox}>
+          <div className={styles.circleBorder}>
+            <div className={styles.circleCore}></div>
+          </div>
         </div>
       </div>
     )

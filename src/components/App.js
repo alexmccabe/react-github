@@ -7,6 +7,8 @@ import UserError from "./User/UserError";
 import UserSearch from "./User/UserSearch";
 import Loader from "./Loader/Loader";
 
+import "../styles/global.scss";
+
 class App extends Component {
   constructor() {
     super();
@@ -39,8 +41,8 @@ class App extends Component {
   }
 
   render() {
-    if (this.isLoading) {
-      return <Loader isLoading={true}></Loader>;
+    if (this.state.isLoading) {
+      return <Loader isVisible={true}></Loader>;
     }
 
     return (
