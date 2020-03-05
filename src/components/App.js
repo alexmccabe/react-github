@@ -47,10 +47,20 @@ class App extends Component {
 
     return (
       <div>
-        <UserSearch onSubmit={this.fetchUser}></UserSearch>
+        <div className="section">
+          <div className="container">
+            <UserSearch onSubmit={this.fetchUser}></UserSearch>
+          </div>
+        </div>
 
-        {this.state.error && <UserError error={this.state.error}></UserError>}
-        {this.state.user && <User user={this.state.user}></User>}
+        <div className="section">
+          <div className="container">
+            {this.state.error && (
+              <UserError error={this.state.error}></UserError>
+            )}
+            {this.state.user && <User user={this.state.user}></User>}
+          </div>
+        </div>
       </div>
     );
   }

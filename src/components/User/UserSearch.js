@@ -13,17 +13,26 @@ function UserSearch(props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <input
-        id="username"
-        name="username"
-        placeholder="username"
-        type="text"
-        onChange={event => setUsername(event.target.value)}
-      />
-
-      <button type="submit" disabled={!username.length}>
-        Search
-      </button>
+      <div className="field has-addons">
+        <div className="control has-icons-left">
+          <span className="icon is-small is-left">
+            <i className="fas fa-user"></i>
+          </span>
+          <input
+            className="input"
+            id="username"
+            name="username"
+            placeholder="username"
+            type="text"
+            onChange={event => setUsername(event.target.value)}
+          />
+        </div>
+        <p className="control">
+          <button type="submit" className="button" disabled={!username.length}>
+            Search
+          </button>
+        </p>
+      </div>
     </form>
   );
 }
